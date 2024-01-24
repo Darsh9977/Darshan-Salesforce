@@ -1,0 +1,43 @@
+trigger clientTrigger on Client__c (before insert, after insert, before update, after update) {
+    
+    if(trigger.isBefore){
+        if(trigger.isInsert || trigger.isUpdate){
+            for(Client__c cl: trigger.new){
+                if(cl.First_Name__c == cl.Last_Name__c){
+                    cl.addError('First Name and Last Name cannot be same. Please Update');
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+
+}
+
+
+
+Client__c -> Insert
+-> Email__c (Duplicate)
+
+Before insert -> Client__c -> Email__c
+
+Trigger.new --> List<sObject>
+
+
+
+
+30/10/2023
+
+Not bulkified code
+governer limit 
+if more than 100 will  i.e 101 pass this code will not work
+
+
+if(trigger.isInsert || trigger.isUpdate){
+                    for(Client__c c :trigger.new){
+                        list<Client__c> count = [SELECT Email_Id__c FROM Client__c WHERE Email_Id__c =:cl.Email_Id__c ];
+                        if(!count.isEmpty()){
+                            cl.addError('Email Id is already Exists');
+                        }

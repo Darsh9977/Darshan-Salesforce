@@ -1,0 +1,61 @@
+Set 
+
+A set is an unordered collection of elements that do not contain any duplicates.
+Set elements can be of any data type—primitive types, collections, sObjects, user-defined types, and built-in Apex types.
+
+set<string> numSet = new set<string>();
+numSet.add('A1');
+numSet.add('A1');
+numSet.add('A1');
+numSet.add('A1');
+numSet.add('A1');
+numSet.add('A1');
+
+system.debug(numSet.size());
+
+set<string> nameSet = new set<string>();
+nameSet.add('Darsh');//0 
+nameSet.add('Nick');//1
+nameSet.add('Vaishu');//2 
+nameSet.add('sanju');//3
+nameSet.add('minu');//4
+
+system.debug(nameSet);
+system.debug(nameSet.size());
+ 
+set<string> nameSet = new set<string>();
+nameSet.add('A1');
+nameSet.add('A1');
+nameSet.add('A1');
+nameSet.add('A1');
+nameSet.add('A1');
+system.debug('-->'+nameSet);
+system.debug('-->'+nameSet.contains('A1'));
+ 
+Set - Duplicate value not there and we get curly bracket
+
+string name = 'CI';
+integer num = 200;
+decimal val = 1.23;
+boolean isCorrect = true;
+date dt  = system.today();
+datetime dtime = system.now();
+
+string strVal = '500';
+integer intVal = integer.valueOf(strVal);
+
+Conversation of Data Type
+
+list<string> rollNumlist = new list<string>();
+rollNumList.add('S-01');
+rollNumList.add('S-02');
+rollNumList.add('S-05');
+string rollNum = rollNumList.get(2);
+integer listSize = rollNumList.size();
+
+set<string > setValues = new set<string>();
+setValues.add('A2');
+setValues.add('A5');
+setValues.add('A2'); 
+setValues.add('A3');
+boolean isContain = setValues.contains('A6');

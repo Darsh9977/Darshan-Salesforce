@@ -1,0 +1,29 @@
+SOQL - Salesforce Object Query Language - to fetch data
+
+Query Editor-------
+
+SELECT FieldAPIName1, FieldAPIName2 FROM ObjectAPIName WHERE condition ORDER BY FieldName ASC/DESC LIMIT number OFFSET number
+
+SELECT id, First_Name__c, Last_Name__c FROM Client__c WHERE First_Name__c ='Rahul' - SELECT 
+
+SELECT id, Country__c FROM Address__c WHERE Country__c = 'India' - WHERE
+
+SELECT id, Country__c FROM Address__c WHERE Country__c = 'India' LIMIT 1 - LIMIT
+
+SELECT CreatedDate,Id, First_Name__c, Last_Name__c, Email_Id__c, Contact_Number__c, DOB__c, PAN_No__c, Aadhar__c FROM Client__c ORDER BY CreatedDate 
+ 
+SELECT CreatedDate,Id, First_Name__c, Last_Name__c, Email_Id__c, Contact_Number__c, DOB__c, PAN_No__c, Aadhar__c FROM Client__c ORDER BY CreatedDate DESC 
+
+SELECT id,firstname, AccountId, email FROM Contact WHERE AccountId = null
+
+SELECT id,firstname, AccountId, email FROM Contact WHERE AccountId != null
+
+SELECT Id, Email_Id__c, First_Name__c, Last_Name__c FROM Client__c WHERE  Email_Id__c like '%.com'
+
+SELECT Id, Email_Id__c, First_Name__c, Last_Name__c FROM Client__c WHERE  Email_Id__c like '%@%'
+
+SELECT id, firstName, lastName, AccountId, Email FROM contact WHERE firstName in ('Pat','Andy','Jack')
+
+SELECT id, firstName, lastName, AccountId, Email FROM Contact LIMIT 5
+
+SELECT id, firstName, lastName, AccountId, Email FROM Contact LIMIT 5 OFFSET 5

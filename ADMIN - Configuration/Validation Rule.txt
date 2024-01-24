@@ -1,0 +1,46 @@
+What Are Salesforce Validation Rules? 
+Validation rules in Salesforce verify the data that a user enters while creating or editing a record. 
+
+
+1. Client Object 
+
+   Validate_Pan_No
+   Active Checked
+   
+   Formula Editor-
+   
+   Age__c  >= 18  &&  ISBLANK( PAN_No__c )
+   
+   Error Message -
+   PAN Number is Mandatory for Major Passport
+
+   Error Location - Top of Page
+
+2. Property Object
+
+   Property_Name_Validation
+   Active Checked
+   
+   Formula Editor-
+   CONTAINS(UPPER( Name ),'TEST')
+   
+   Error Message -
+   Property Name cannot be Test
+
+   Error Location - Field - Property Title
+   
+3. Property Object
+
+   Validation_Price   
+    Active Checked
+   
+   Formula Editor-
+   ISBLANK( List_Price__c ) && ISBLANK( Selling_Price__c )
+   
+   Error Message -
+   List Price and Selling Price cannot be Empty
+
+   Error Location - Top of Page
+   
+   
+   

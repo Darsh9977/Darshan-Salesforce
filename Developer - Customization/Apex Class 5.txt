@@ -1,0 +1,66 @@
+public list<Account> getAccount(String Name){
+        list<Account> accList = new list<Account>();
+        accList = [SELECT Id, Name, AccountNumber, BillingAddress FROM Account WHERE Name = : name];
+        return accList;
+    }
+/*
+EgOneCls cl = new EgOneCls();
+system.debug(cl.getAccount('CI1'));
+*/
+
+public Account getAccountDetails(string actName){
+        list<Account> acObjList = new list<Account>();
+         acObjList = [SELECT Id, Name FROM Account WHERE name =: actName];
+        
+        if(acObjList.size()<=0){
+            Account acObj = new Account();
+            acObj.Name = actName;
+            insert acObj;
+            
+            
+            acObjList.add(acObj);
+        }
+        
+        return acObjlist.get(0);
+    
+    }
+/*	
+FunctionClass cl = new FunctionClass();
+system.debug(cl.getAccountDetails('CI'));	
+*/	
+
+ public list<Contact> createContacts(string conName, integer numberOfContact){
+        list<Contact> conList = new list<Contact>();
+        for(integer i = 0; i< numberOfContact; i++){
+            Contact con = new contact();
+            con.LastName = conName;
+            conList.add(con);
+           }
+           insert conList;
+        
+           return conList;
+   }
+    	
+/*
+FunctionClass cl = new FunctionClass();
+list<Contact> conList = new list<Contact>();
+conList = cl.createContacts('Darsh',10);
+system.debug(conList);
+*/	
+
+
+
+
+
+
+
+5. Pass Account and Contact as an Input to the function and related Account with Contact inside function.
+
+6. Pass Account id as an input to the function and return true if Account has more than 5 contacts else return false.
+
+7. Pass Account id as input and return list of contact's Email Ids
+
+8. Pass contact id as an input to the function and return a list of contacts which belongs to contact's Account.
+	
+	
+

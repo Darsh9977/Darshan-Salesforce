@@ -1,0 +1,24 @@
+                                              Apex Class 3
+  
+  public Account createAccount(string Name){
+        Account acc = new account();
+        acc.Name = Name;
+        insert acc;
+        return acc;
+    }
+    
+    public Contact createContact(string lName, string acId){
+        Contact con = new contact();
+        con.lastName = lName;
+        con.AccountId = acId;
+        insert con;
+        return con;
+    }
+ 
+/* 
+EgOneCls eg = new EgOneCls();
+account act = new account();
+act = eg.createAccount('Jackson');
+contact cont = new contact();
+cont = eg.createContact('Daniel',act.id);	
+*/

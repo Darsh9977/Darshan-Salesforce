@@ -1,0 +1,54 @@
+                                                       10/10/2023
+
+Constructor - We use constructor to get the value.
+
+Class name and constructor name is same.
+
+public-> This class is accessible to your organization
+void->It will not return anything.
+integer -> It will return integer.
+string-> It will return string.
+
+public class EgOneCls {
+   integer bal;
+    public egOneCls(){
+        bal = 0;
+    }
+    
+	public void sum(){
+	integer no1 = 10;
+	integer no2 = 20;
+	integer add = no1 + no2;
+	system.debug(add);
+    
+	}
+
+public void sumPar(integer no1, integer no2){
+    integer add = no1 + no2;
+	system.debug(add);
+ }
+} 
+
+/*
+EgOneCls cl = new EgOneCls();
+cl.sumPar(100,200);
+*/
+
+public integer sumParRet(integer no1, integer no2){
+    integer add = no1 + no2;
+	return add;
+	 
+public string fullName(string firstName , string lastName){
+        string fullName = firstName+' '+lastName;
+        return fullName;
+    } 
+}	
+/*
+EgOneCls cl = new EgOneCls();
+cl.sum();
+cl.sumPar(100,200);
+integer sumParRet = cl.sumParRet(500,400);
+system.debug('-->'+sumParRet);
+string fName = cl.fullName('Darsh','Ganvir');
+system.debug('--'+fName);
+*/

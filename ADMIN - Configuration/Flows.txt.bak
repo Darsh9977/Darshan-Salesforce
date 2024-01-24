@@ -1,0 +1,19 @@
+Flows ------------------------------------------------------------------------------------------------------
+15/01/2024
+Q. How to expose apex to Flows
+   @InvocableMethod Annotation
+   Method should be public and static
+   Accepts list and return list only
+   
+Mixed Dml - Always start a new transcation   
+
+Palette
+
+Interaction ---- Front End/ Back End
+1.Screen
+2.Action
+3.Subflow
+
+Logic ------
+
+Data ------

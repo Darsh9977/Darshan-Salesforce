@@ -1,0 +1,84 @@
+if(trigger.isBefore){
+	set<string> emailSet = new set<string>();
+	set<string> phoneSet = new set<string>();
+		for(Contact con: trigger.new){
+			emailSet.add(con.Email);
+			phoneSet.add(con.Phone);
+		}
+		list<Contact> conList = new list<Contact>();
+		conList = [SELECT id, Phone, Email FROM Contact WHERE Phone in: phoneSet or Email in : emailSet];
+		set<string> conEmail = new set<string>();
+		set<string> conPhone = new set<string>();
+		set<string> conEmailPhoneSet = new set<string>();
+		
+		for(Contact con: conList){
+			
+		conEmailPhoneSet.add(con.Email+con.Phone);
+		}
+		
+	for(Contact con : trigger.new){
+		if(conEmailPhoneSet.contains(con.Email+con.Phone)){
+			con.addError('Email and Phone are already Exist.');
+		}
+	} 
+}
+}
+
+
+if(trigger.isBefore){
+	if(trigger.isInsert || trigger.isUpdate){
+		for(Client__c cl: trigger.new){
+			if(cl.First_Name__c == cl.Last_Name__c){
+				cl.addError('First Name and Last Name cannot be same. Please Update');
+			}
+			if(trigger.isInsert || trigger.isUpdate){
+				for(Client__c c: trigger.new){
+					if(c.Gender__c == 'Male'){
+					   c.First_Name__c ='Mr ' + c.First_Name__c;
+					}
+					else if (c.Gender__c == 'Female'){
+						c.First_Name__c ='Mrs ' + c.First_Name__c;
+						}
+					 }
+				  }
+			 }
+		}
+  }
+
+
+
+if(trigger.isInsert){
+		for(contact c: trigger.new){
+			if(c.FirstName == 'Test'){
+				c.addError('FirstName cannot be Test.Please Update');
+				
+			}
+		}
+	}
+	
+	
+	
+	
+trigger OpportuntyTrigger on Opportunity (before insert,after insert, before update, after update) {
+if(trigger.isBefore){
+	if(trigger.isUpdate){
+		for(Opportunity opp: trigger.new){
+			if(opp.Amount > 5000 ){
+			   opp.StageName ='Needs Analysis';
+			}
+		}
+	 }
+}
+}
+
+
+trigger OpportuntyTrigger on Opportunity (before insert,after insert, before update, after update) {
+if(trigger.isBefore){
+	
+}
+if(trigger.isAfter){
+	if(trigger.isInsert){
+		OpportunityTriggerHandler.addAccountTeams(trigger.new);
+	}
+}
+}

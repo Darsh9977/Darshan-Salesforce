@@ -1,0 +1,12 @@
+                                             26/09/2023
+
+                      Workflow                          Process Builder                     flows
+1.Condition             if                                if else if                        if else if
+2.Actions               4                                  11                               50+ Actions and still adding more
+3.DML operations       Update                           Create, Update                      Read, Create, Update and delete
+4.Triggering Event    Created and Updated(edited)       Created and Updated(edited)         Created, Updated, deleted
+5.Integration            yes                             no                                yes
+6.Relationship        Parent to child only           Parent to child, child to Parent      Parent to child, child to Parent
+7.Speed                  fast                              faster                              fastest
+8.Debuggging             No                                 No                                  Yes
+9.Version Control        No                                 Yes                                 Yes

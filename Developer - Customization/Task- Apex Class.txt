@@ -1,0 +1,71 @@
+1.Create a function which will take ContactId as a input/ parameter.Check if this contact has Parent Account(AccountId).
+If Account not present for the contact, create new Account and relate this Account with COntact.
+Eg- If we pass contactId (0003wfh162662) of Sumit Contact and this contact dont have Parent account, 
+then create new Account with name "Sumit Account" and relate Sumit account with sumit contact.
+
+public class FunClass 
+    
+    public Contact createAccountForContact(id conId){
+       Contact con = new Contact();
+       con = [SELECT Id, LastName, AccountId FROM Contact WHERE id =: conId LIMIT 1];
+        
+        if(con.AccountId == null){
+            Account acc = new Account();
+            acc.Name = 'Sumit';
+           insert acc;
+           con.AccountId = acc.id;
+        }
+        update con;
+        return con;
+ }
+
+2.Pass Account Id and number of contact as a parameter to the function. create number of contacts as per parameter(number of contacts) 
+against Account.
+ 
+ public void createMultipleContacts(id accId, integer numOfContact){
+        Account ac = new Account();
+        ac= [SELECT name FROM Account WHERE id =: accId];
+        list<contact> conList = new list<contact>();
+        for(integer i=1; i<= numOfContact; i++){
+            Contact con = new Contact();
+            con.lastName = ac.Name;
+            con.AccountId = accId;
+            conList.add(con);
+        }
+        
+        if(conList.size()>0)
+        	insert conList;
+}
+
+3.Pass list of Account as a parameter to the function and return count of contacts belongs to these accounts.
+
+ public integer getContactCount(list<Account> accList){
+        set<id> accIds = new set<id>();
+        for(Account ac: accList){
+            accIds.add(ac.id);
+        }
+        
+        list<contact> conList = new list<contact>();
+        conList = [SELECT id FROM Contact WHERE accountId in: accIds];
+        return conList.size();
+    }
+
+
+4.Pass list<contact> as a input to the function and return map<accountID,contact>
+
+public map<id,contact> getConMap(list<contact> conList){
+        
+        map<id,contact> conMap = new map<id,contact>();       
+        for(contact con: conList){
+            conMap.put(con.AccountId,con);
+        }
+        return conMap;
+    }
+
+5. Pass Account and Contact as a Input to the function and related Account with Contact inside function.
+
+6. Pass Account id as a input to the function and return true if Account has more than 5 contacts else return false.
+
+7. Pass Account id as input and return list of contact's Email Ids
+
+8. Pass contact id as a input to the function and return list of contacts which belongs to contact's Account.

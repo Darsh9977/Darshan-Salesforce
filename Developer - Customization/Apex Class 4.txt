@@ -1,0 +1,53 @@
+                                                        Function Class
+
+public class FunctionClass {
+
+    public list<Account> getAccounts(string accName){
+        list<Account> accList = new list<Account>();
+        accList =[SELECT id, Name from Account WHERE name = : accName];
+        return accList;
+    }
+}
+
+/* FunctionClass cl = new FunctionClass();
+system.debug(cl.getAccounts('Darsh'));
+*/
+
+syntax error
+run time error
+
+
+public class FunctionClass {
+
+    public integer getAccounts(string accName){
+        list<Account> accList = new list<Account>();
+        accList =[SELECT id, Name from Account WHERE name = : accName];
+        return accList.size();
+    }
+    
+}
+
+/* FunctionClass cl = new FunctionClass();
+system.debug(cl.getAccounts('CI'));
+*/
+
+in - Multiple value  compare
+
+public list<Account> getAccountsData(set<string> accSet){
+        list<Account> acList = new list<Account>();
+        acList = [SELECT id, Name FROM Account WHERE name in : accSet];
+        return acList;
+    }
+	
+/*
+FunctionClass cl = new FunctionClass();
+set<string> nameSet = new set<string>();
+nameSet.add('CI1');
+nameSet.add('CI2');
+nameSet.add('CI3');
+nameSet.add('CI4');
+list<Account> acList = new list<Account>();
+acList = cl.getAccountsData(nameSet);
+system.debug(acList);
+*/
+	

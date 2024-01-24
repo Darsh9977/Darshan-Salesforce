@@ -1,0 +1,71 @@
+06/12/2023
+
+Collections
+list 
+set 
+map
+
+Primitive Data Type
+boolean
+integer
+string
+
+Non-Primitive Data Type
+sObject --> Standard and Custom Object 
+Object  --> Apex
+
+methodOne -> 2 Data Type return at Once.
+
+Class is a blueprint of an Object.
+
+Wrapper is a class with only variable.
+
+public class WrapperCI10A {
+    
+    public string str;   // Fields
+    public integer num;  // Fields
+    public Account acc;  // Fields
+}
+
+
+system.debug('Data-->'+WrapperExCI10A.returnDetails());
+
+wrapperCI10A wrapper = new WrapperCI10A();
+wrapper = WrapperExCI10A.returnDetails();
+system.debug('data-->'+wrapper);
+system.debug('data-->'+wrapper.num);
+
+Account
+First Name 
+Last Name
+Email 
+Related Contact
+same as Account First Name, Last Name and Email
+
+Revision 
+
+10/01/2024
+
+public class wrapperHW {
+    public class wrapperOne {
+    public string firstName;
+    public string lastName;
+    public string PhoneNo;
+    }
+    public static void hw(wrapperOne wrapper){
+     Contact con = new Contact();
+        con.FirstName = wrapper.firstName;
+        con.LastName = wrapper.lastName;
+        con.Phone = wrapper.PhoneNo;
+        insert con;
+    }
+    
+}
+
+
+wrapperHW.wrapperOne w  = new wrapperHW.wrapperOne();
+w.firstName = 'Darsh';
+w.lastName = 'Ganvir';
+w.PhoneNo = '1234567';
+
+wrapperHW.hw(w);

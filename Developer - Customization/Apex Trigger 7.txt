@@ -1,0 +1,63 @@
+ if(trigger.isBefore && trigger.isInsert ){
+                    for(Account acc : trigger.new){
+                        if(acc.Name !=null){
+                          acc.Name = 'Mr ' + acc.Name;  
+                      }
+                        if(trigger.isUpdate){
+                            for(Account act : trigger.new){
+                                if(act.Industry =='Technology'){
+                                    act.Rating ='Cold';
+                                    act.Type='Technology Partner';
+                                    act.Ownership='Private';
+                                   }
+                                }
+                        }  
+               }                    
+       }
+}
+
+
+if(trigger.isInsert || trigger.isUpdate){
+            
+            set<string> nameSet = new set<string>();
+            for(Account ac:trigger.new){
+                nameSet.add(ac.Name);
+                
+            }
+            system.debug('---1---'+nameSet);
+            list<account> accList = new list<account>();
+            accList = [SELECT id, Name FROM Account WHERE Name in: nameSet];
+            system.debug('---2---'+accList);
+            set<string> accName = new set<string>();
+            for(Account ac: accList){
+                accName.add(ac.Name);
+            }
+            system.debug('---3---'+accName);
+            for(Account ac: trigger.new){
+                system.debug(accName+'---4---'+ac.Name);
+                if(accName.contains(ac.Name)){
+                    ac.addError('Account Already Exist.');
+                    
+                }
+				
+				for(account acc:accList){
+				}
+				
+09/11/2023
+
+before - same object
+       - Validation rule - throw an error
+
+after - different object	   
+
+10/11/2023
+
+trigger.new -> New Values in List<sObject> -> list<Account>
+
+trigger.newMap -> New Values in Map<id, sObject> -> Map<id,Account>
+
+trigger.old -> Old/Previous Values in List<sObject> -> List<Account>
+
+trigger.oldMap -> Old/Previous Values in Map<id,sObject> Map<id,Account>
+
+				

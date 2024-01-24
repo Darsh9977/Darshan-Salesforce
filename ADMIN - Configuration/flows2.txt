@@ -1,0 +1,9 @@
+               27/09/2023
+			 
+			 
+Account --> Created --> Status = Open and Active = Yes --> Create related Contact
+
+
+Email Template ->Body and Structure
+
+Email Alert ->Object information,Recipent,From Email Addres

@@ -1,0 +1,53 @@
+trigger AccountTrigger on Account (before insert, after Insert, before update, after update){
+ if(trigger.isAfter){
+        if(trigger.isInsert){
+            AccountTriggerHandler.createContactRec(trigger.new); 
+        }
+            /*if(UtilityCls.isRun){
+                
+            }
+           //AccountTriggerHandler.createdRelOpp(trigger.new);
+            */
+        if(trigger.isUpdate){
+           // AccountTriggerHandler.updateContactPhone(trigger.new, trigger.oldMap);
+        }
+    }
+}
+
+
+public class AccountTriggerHandler {
+    
+    public static void createContactRec(list<Account> newList){
+    list<Contact> conList = new list<Contact>();    
+        for(Account acc:newList){
+            Contact con = new Contact();
+            con.LastName = acc.Name+'Con';
+            con.AccountId = acc.Id;
+            conList.add(con);
+        }
+        if(conList.size() >0)
+            insert conList;
+    }
+	
+	
+	
+trigger ContactTrigger on Contact (before insert, after insert,before update, after update) {
+	if(trigger.isAfter){
+        if(trigger.isInsert){
+            /*if(UtilityCls.isRun){
+                UtilityCls.isRun = false;*/
+            ContactTriggerHandler.createAccountRec(trigger.new);
+            }
+	
+	public class ContactTriggerHandler {
+
+    public static void createAccountRec(list<Contact> newList){
+        list<Account> accList = new list<Account>();
+        for(Contact con: newList){
+            Account acc = new Account();
+            acc.Name = con.LastName+ 'Acc';
+            accList.add(acc);
+        }
+        if(accList.size()>0)
+            insert accList;
+    }

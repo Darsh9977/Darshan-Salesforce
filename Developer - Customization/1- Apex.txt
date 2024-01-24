@@ -1,0 +1,108 @@
+               1 -> Apex -> Case sensitive Language
+
+Person -> Salesforce -> Machine Language
+
+Setup -> Developer Console -> Debug -> Open Execute
+
+string -> Primitive Data type
+name -> variable
+
+
+1.Name
+
+string name;
+name = 'Amit';
+system.debug(name);
+name = 'Raj';
+system.debug(name);
+
+2.Name
+
+string studentName; # declaration #
+studentName = 'Sumit'; # initialization #
+system.debug(studentName);
+
+string studentName2 = 'Shubham'; #//declaration +  initialization //#
+system.debug(studentName2);
+
+3.Full Name
+
+string firstName;
+firstName = 'Shubham';
+string lastName = 'Kumar';
+
+system.debug(firstName);
+system.debug(lastName);
+
+4.Full Name
+
+string firstName;
+firstName = 'Shubham';
+
+string lastName = 'Kumar';
+string fullName = firstName+' '+lastName;
+system.debug(fullName);
+
+5. Integer
+string name = 'CI';
+integer num;
+num = 100;
+system.debug(num);
+
+6. Integer
+string studentName;
+studentName = 'Saurabh';
+integer age;
+age = 45;
+
+system.debug(studentName+'-----'+age);
+
+7. Sum of 2 Numbers
+integer num1 = 100;
+integer num2 = 200;
+integer sum = num1+num2;
+system.debug('sum of '+num1+' and '+num2+' is ' + sum);
+
+8.decimal and boolean
+
+string studentName = 'Sumit';
+integer age = 25;
+decimal marks = 100.20;
+
+boolean isValidStudent = false;
+
+9. Date and Time
+
+date dt = system.today();
+datetime dTime = system.now();
+
+system.debug('---'+dt);
+system.debug('---2--'+dTime);
+
+
+09/10/2023
+Revision Class
+
+1.
+string studentName;
+studentName ='Suraj';
+studentName ='Saurabh';
+system.debug(studentName);
+
+2.
+integer num = 100;
+num = 200;
+system.debug(num);
+
+3.
+decimal decNum = 12.23;
+boolean isCheck;
+isCheck = True;
+system.debug(decNum);
+system.debug(isCheck);
+
+
+date dt = system.today();
+datetime dtime = system.now();
+system.debug('-1->'+dt);
+system.debug('-2->'+dtime);

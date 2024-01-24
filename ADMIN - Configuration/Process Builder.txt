@@ -1,0 +1,51 @@
+24/09/2023
+                 Workflow Rule 2.0 i.e - Process Builder
+
+Process Builder can't send Outbound message.
+
+Upto 50 ver can be saved
+
+
+Workflow Actions have only 4 actions where as in Process Builder we have 11 Actions
+
+1.Email Alerts
+2.Field Update
+3.Outbound Messages
+4.Tasks
+
+Process Builder
+1.Apex
+2.Create a Record
+3.Email alerts
+4.Flows
+5.Post to Chatter
+6.Processes
+7.Quick Actions
+8.Quip
+9.Send Custom Notification
+10.Submit for Approval
+11.Update Record
+
+Account Name !=null False
+Account Name ==null True
+
+AND
+OR
+
+AND Logic
+
+
+Condition 1 Condition 2  TRUE
+
+  True         True      True
+  True         False     False
+  False        True      False
+  False        False     False
+  
+  
+OR Logic
+
+  True          True      True
+  True          False     True
+  False         True      True
+  False         False     False

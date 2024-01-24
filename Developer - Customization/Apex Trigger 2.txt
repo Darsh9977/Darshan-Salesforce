@@ -1,0 +1,44 @@
+trigger contactTrigger on Contact (before insert, after insert,before update, after update, before delete, after delete , after undelete ) {
+
+    if(trigger.isBefore){
+        if(trigger.isInsert){
+            system.debug('--Before Insert--');
+			system.debug(trigger.new);
+        }
+        if(trigger.isUpdate){
+            system.debug('--Before Update--');
+        }
+        if(trigger.isDelete){
+            system.debug('--Before Delete--');
+        }
+    }
+ if(trigger.isAfter){
+        if(trigger.isInsert){
+            system.debug('--After Insert--');
+			system.debug(trigger.new);
+        }
+        if(trigger.isUpdate){
+            system.debug('--After Update--');
+        }
+        if(trigger.isDelete){
+            system.debug('--After Delete--');
+        }
+        if(trigger.isUndelete){
+            system.debug('--After Undelete--');
+        }
+    
+    }
+}
+    
+   
+(Contact:{Id=null, IsDeleted=false, MasterRecordId=null, AccountId=null, Salutation=null, FirstName=null,
+LastName=last 105, OtherStreet=null, OtherCity=null, OtherState=null, OtherPostalCode=null, OtherCountry=null, 
+OtherLatitude=null, OtherLongitude=null, OtherGeocodeAccuracy=null, MailingStreet=null, MailingCity=null, MailingState=null,
+MailingPostalCode=null, MailingCountry=null, MailingLatitude=null, MailingLongitude=null, MailingGeocodeAccuracy=null, Phone=null, 
+Fax=null, MobilePhone=null, HomePhone=null, OtherPhone=null, AssistantPhone=null, ReportsToId=null, Email=null, Title=null, 
+Department=null, AssistantName=null, LeadSource=null, Birthdate=null, Description=null, OwnerId=0055j000008T7wiAAC, 
+HasOptedOutOfEmail=false, HasOptedOutOfFax=false, DoNotCall=false, CreatedDate=null, CreatedById=null, LastModifiedDate=null, 
+LastModifiedById=null, SystemModstamp=null, LastActivityDate=null, LastCURequestDate=null, LastCUUpdateDate=null, 
+LastViewedDate=null, LastReferencedDate=null, EmailBouncedReason=null, EmailBouncedDate=null, IsEmailBounced=false, 
+PhotoUrl=null, Jigsaw=null, JigsawContactId=null, CleanStatus=Pending, IndividualId=null, Pronouns=null, GenderIdentity=null, 
+IsPriorityRecord=false, Level__c=null, Languages__c=null, IsPrimary__c=null})

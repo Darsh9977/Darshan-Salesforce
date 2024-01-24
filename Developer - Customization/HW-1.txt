@@ -1,0 +1,16 @@
+       Homework
+
+1.SOQL to get Accont with Name 'United Oil & Gas Corp.' 
+->SELECT Id, Name, Type, Industry, BillingCountry FROM Account WHERE Name = 'United Oil & Gas Corp.'
+
+2.SOQL to get Contacts Which belongs to 'United Oil & Gas Corp.'(do not use id in WHERE condition)
+->SELECT Id, FirstName, AccountId, Account.Name FROM Contact WHERE Account.Name = 'United Oil & Gas Corp.'
+
+3.DELETE all the Contacts which belongs to 'United Oil & Gas Corp.'
+->DELETE FROM Contact WHERE Account.Name ='United Oil & Gas Corp.'
+
+4.SOQL to get the Contacts without Phone Number
+->SELECT Id, Name, Phone, Email FROM Contact WHERE Phone = null
+
+5.Print 1 to 100 numbers using for loop and debug statement 
+->for(integer i=1; i<=100; i++ ){system.debug(i); }

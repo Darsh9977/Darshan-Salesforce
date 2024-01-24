@@ -1,0 +1,45 @@
+
+
+1.Create a For Loop to Print the Number from 100 to 50
+-->for(integer i=100; i > 49; i--)
+{system.debug(i);}
+
+2.Create a For Loop to Print Even Number from 0 to 100 
+->for(integer i=0; i<= 100; i++){
+    if(Math.mod(i,2)==0){
+        system.debug(i);
+    }
+}
+
+3.Write a code to Calculate the Sum of First 20 Numbers
+->integer sum = 0;
+for (integer i =1; i<=20; i++){
+    sum +=i;
+}
+system.debug('Sum of first 20 numbers is : '+sum);
+
+4.Write a code to print Fibonacci Series
+->integer n1= 0,n2= 1,n3,count = 10;
+system.debug(n1);
+system.debug(n2);
+for(integer i=2; i <count; i++) {
+    n3 = n1 + n2;
+    system.debug(n3);
+    n1=n2;
+    n2=n3;
+}
+
+5.Write a Code to print below pattern.
+1
+12
+123
+1234
+12345
+
+->for(integer i=1; i<=5; i++){
+    for(integer j=1; j<=i; j++){
+        system.debug(j);
+    }
+    system.debug('\n');
+    }
+

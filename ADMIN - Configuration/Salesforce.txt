@@ -1,0 +1,87 @@
+Salesforce---------------------------------------------------------------------------------------------------------------------------------
+
+Cloud --servers that are accessed over the Internet, and the software and databases that run on those servers
+
+1.Salesforce is Worlds #1 CRM- Customer Relationship Management  Why CRM is required - In order to do sales and services
+2.Salesforce is a Public Cloud.
+Types of Cloud ?
+ 1.Public Cloud
+ 2.Private Cloud
+ 3.Hybrid cloud
+ 4.Salesforce is a Public Cloud
+
+3.Multi-tenant Environment - Multiple users sharing the same environment
+4.Saleforce is subscription basis Model
+5.Database - A place where we organize the data 
+
+Cloud Computing means storing and acessing data and programs over the internet instead of your computer's hard drive.
+Types of Cloud Computing :-
+1.Software as a service (SaaS) - Saleforce
+2.Platform as a service(PaaS) - Force.com 
+3.IAAS - IaaS, or Infrastructure as a Service (AWS)
+
+API Name - Application Programming Interface Name
+Org is short for organization, and it refers to a specific instance of Salesforce.
+What are the Standard objects already present in Salesforce?
+1.Account
+2.Activity
+3.Contact
+4.Opportunities
+
+What are the Standard Fields already present in Salesforce?
+There are four Salesforce standard fields in every custom object that are Created By, Last Modified By, Owner and 
+the Name field created at the time of the creation of the object. 
+These fields cannot be deleted or edited and they are always required.
+1.Owner
+2.Created by
+3.Last Modified by
+4.Name field created at the time of the creation of the object
+
+Salesforce Standard App :- It is a group of tabs and objects.
+Objects are tables in the Salesforce database that store a particular kind of information.
+Records are rows in object database tables
+Fields are columns in object database tables.
+App - Group of tabs
+New - Edit Page Layout
+Record - Detail Page Layout
+list view
+
+formula field - run time calculate
+
+What are the things we can acheive from page layouts?
+we can add new fields
+we can adjust fields
+
+Passport Type
+IF (Age__c >= 18, 'Major Passport','Minor Passport')
+
+Adress__c - Because it is  Custom Object. 
+
+Parent - single
+Child - Multiple
+
+Lookup Relationship - 
+-Child and Parent exist independently (field is not required and can be null or blank)Parent Not Mandatory 
+- Losely Coupled 
+- Deletion of Parent does not delete Child records
+- Rollup summary cannot created
+
+
+Master Detail Realtionship 
+-Child cannot exist without Parent (field is required and can’t be null or blank) Mandatory - Parent Mandatory 
+- Tightly Coupled 
+- Cascade delete (deleting Parent deletes all Child records) 
+-Rollup summary can create
+
+What is Reparenting?
+Reparenting allows you to edit the parent details of the Object, which is not allowed to edit
+
+1 CLient
+2 Master Detail Relationship 
+ Junction object  - ALways use master detailed relationship
+ 
+What is Junction Object in Salesforce?
+You can build Many-to-Many relationships using Junction Objects on the Salesforce platform. 
+Object is a custom object that enables you to link a custom object with a large 
+number of child records and link each child record to a large number of parent objects.
+Example-one student can enroll in multiple courses, and one course can have multiple students.

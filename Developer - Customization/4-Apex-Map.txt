@@ -1,0 +1,66 @@
+Map - Map is collection of key and value pairs. Keys are always unique having a value associated. values can be duplicates. 
+
+map<string,string> studentMap = new map<string,string>();
+studentMap.put('S-1','Amit');
+studentMap.put('S-2','Raj');
+studentMap.put('S-3','Jayesh');
+studentMap.put('S-4','Aamir');
+system.debug(studentMap);
+
+
+3) Map - key, value
+
+map<integer,string> studentMap = new map<integer,string>();
+studentMap.put(100,'Amit');
+studentMap.put(200,'Raj');
+studentMap.put(522,'Jayesh');
+studentMap.put(222,'Aamir');
+studentMap.put(786,'Aamir');
+            // key, value
+           //  {set}, (list)
+system.debug(studentMap.get(200));
+system.debug(studentMap.keySet()); // Set
+system.debug(studentMap.values()); // List
+system.debug(studentMap.containsKey(522));
+
+
+map<string,string> studentMap = new map<string,string>();
+studentMap.put('S-1','Darsh');//0
+studentMap.put('S-2','Nick');//1
+studentMap.put('S-3','Minu');//2 
+studentMap.put('S-4','sanju');//3  
+studentMap.put('S-5','Vaishu');//4    
+
+system.debug(studentMap);
+system.debug(studentMap.Values());//List
+system.debug(studentMap.Keyset());//Set
+
+
+Revision Class
+09/10/2023
+1.
+
+map<integer,string> numMap = new map<integer,string>();
+numMap.put(1,'One');
+numMap.put(2,'two');
+numMap.put(3,'three');
+numMap.put(1,'four');
+system.debug('-->'+numMap);
+system.debug('-->'+numMap.keySet());
+system.debug('-->'+numMap.values());
+system.debug('-->'+numMap.containsKey(4));
+
+2.
+
+map<integer,string> numMap = new map<integer,string>();
+numMap.put(1,'One');
+numMap.put(2,'two');
+numMap.put(3,'three');
+numMap.put(4,'four');
+system.debug('-->'+numMap);
+system.debug('-->'+numMap.keySet());
+system.debug('-->'+numMap.values());
+system.debug('-->'+numMap.containsKey(4));
+
+
+

@@ -1,0 +1,73 @@
+                                         29/09/2023
+									Security model of Salesforce
+										 
+->USER -> Name, Username, Profile -> Sys Admin
+	 
+->Profile ->  Standard User -> Profile Name
+	
+	                                     30/9/2023
+
+Freeze -> User on Leave still part of Organization
+Activate -> Deactivate - User not part of Organization
+Freeze -> Cant active other user
+Deactivate -> Licenses will be free
+	
+Profile -> Page layout -> Edit page fields drag and drop
+	           Field level security -> acess edit -> read acess  edit acess
+			   Custom app setting -> hide custom app
+			   administrative permissions -> Gear icon hide
+			   
+			   Main
+			   1.Record
+			   2.Field
+			   3.Acess
+			   4.Additional			   
+
+01/10/2023
+ 
+ To create new user select profile is mandatory
+ To create new Profile always clone standard user
+ 
+Standard/Custom App setting -> Select chechboxes
+Tab setting -> Default on, Default off, Tab hidden
+CRUD -> Create Read Update Delete
+
+
+Session Settings -> Session logout after 15 mins
+Password Policies -> Password complexity requirement 
+login hours -> Set time
+Login IP ranges -> Set range 
+
+
+02/10/23
+
+Field level security - Read access     Edit Access -> Checkboxes
+ 
+thumb rule create as minimum profile as you can
+
+Permission sets -> Additional Permissions/Settings
+
+03/10/2023
+
+Task - create agent profile create client record  edit but cannot delete
+create address record can edit but cannot delete
+can only view citizenship
+can create client citizenship record can edit but dont delete
+
+
+04/10/2023
+
+OWD(organization wide record)-(Objects)-Record level security --> 
+                                                         1.Private 
+														 2.Public Read/Write 
+														 3.Public Read only
+														 4.Controlled by Parent -= Master Detail Relationship 
+														 5.Public Read/Write Tramsfer
+
+Public Groups -> Public Groups
+                 Roles
+				 Roles and Subordinates
+				 Users
+
+ thumb rule - Higheset access - Public Read/Write
+ 

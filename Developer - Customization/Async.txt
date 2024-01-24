@@ -1,0 +1,149 @@
+22/11/23
+Future Methods :-
+Syntax - 
+Public class FutureClass
+{
+@future(callout=true)
+public static void myFutureMethod(parameter){   
+// Perform some operations
+ }
+}
+
+prerequisite :-
+
+
+Q. Why Primitive --> If we pass non primitive and it gets updated, it wont have latest value in such case 
+pass id and perform SOQL to get latest objects
+
+
+Setup object - quick search - User, apex jobs
+Non-setup object(sObject) - Account,contact
+@future - 
+Demerits of Future Method
+1.Non Primitive Data Type.
+2.It cant be traced.
+3.Chaining - We cannot call future into future.
+
+At a time 50 can be in Queue in future Method
+
+Anyhow pass non primitive to future use JSON.serialize(We will convert object to string).
+
+23/11/2023
+
+Queueable Apex: This is an async process which can be launched to run processing, callouts, etc. 
+                This is useful when trying to do processes in triggers which are long running, or simply unavailable, e.g. callouts.
+
+public class className implements Queueable{
+   public void execute(QueueableContext q){
+   
+   //code
+   
+   }
+}
+
+OOPs concept of interface
+Abstract Method - public void execute()
+Parameters -- primitive and non-primitive both --> from Constructor
+
+Merits of Queuable Apex over future Method:-
+
+1.It is traceable --> 
+                     AsyncApexJob -->
+                					 SELECT id,Status FROM AsyncApexJob 
+2.Chaining upto 5 level --> 
+                           ID jobID = System.enqueueJob(new AsyncExecutionExample());
+
+3.At a time 50 can be in Queue.
+
+public class AsyncExecutionExample implements Queueable {
+   public void execute(QueueableContext context) {
+   Account a = new Account(Name='Acme',Phone='(415) 555-1212');
+   insert a;        
+   }
+}
+
+Batch Apex: An Apex process which is designed to handle large numbers of records (up to 50 million) by processing them
+            in smaller batches of 1 – 2000 records at a time.
+
+start ---> 100000 ---> one time run
+public (Database.QueryLocator | Iterable<sObject>) start(Database.BatchableContext bc) {}
+execute ---> max ---> 2000 will run 50 times ---> default 200
+public void execute(Database.BatchableContext BC, list<P>){}
+finish ---> one time run
+public void finish(Database.BatchableContext BC){}
+chaining ---> upto 5 level
+
+AsyncApexJob jobInfo = [SELECT Status,NumberOfErrors FROM AsyncApexJob WHERE Id=:jobID];
+
+public class AccountBatchApex implements Database.Batchable<sObject>{
+  public Database.QueryLocator start(Database.BatchableContext bc) {
+  return Database.getQueryLocator('SELECT id,ShippingCountry,ShippingCity,BillingCountry,
+                                   BillingCity FROM Account WHERE BillingCity!=null AND ShippingCity= null');
+  }
+  public void execute(Database.BatchableContext bc, List<Account> records){
+  list<Account> accList = new list<Account>();
+  for(Account acc: records){// 1 thousand
+  acc.ShippingCity = acc.BillingCity;
+  acc.ShippingCountry = acc.BillingCountry;
+  accList.add(acc);
+  }
+   if(accList.size() > 0){
+   update accList;
+  }
+}
+  public void finish(Database.BatchableContext bc){
+  }
+}
+*/
+AccountBatchApex myBatchObject = new AccountBatchApex();
+Id batchId = Database.executeBatch(myBatchObject);
+*/
+
+2 Query - list of list - 2 for each loop
+
+public class ContactBatchScheduleClass implements Schedulable{
+public void execute (SchedulableContext sc){
+ContactBatchClass cls = new ContactBatchClass();
+Database.executeBatch(cls,5);
+
+  }
+}
+
+1/12/2023
+
+Batch Apex
+
+1.Database.Batchable
+2.Database.Stateful
+3.Database.Schedulable
+
+up to 50 million records
+
+The Database.Batchable interface contains three methods that must be implemented.
+Database.Batchable Interface
+2.Database.Iterable
+
+
+The maximum number of future method invocations per a 24-hour period is 250,000 or the number of user licenses in your 
+organization multiplied by 200,whichever is greater. 
+This limit is for your entire org and is shared with all asynchronous Apex: 
+Batch Apex, Queueable Apex, scheduled Apex, and future methods.
+
+
+
+Scheduled Apex: A process that is scheduled to run at a specific time and date. 
+                This can be customized to be repeatable, either by scheduling it through the UI, 
+				or via a CRON string within other Apex code.
+Schedulable Apex - 50 limit
+
+Cron expression
+1/2 start at 1 then 3 - odd
+
+
+Seconds Minutes Hours Day_of_month Month Day_of_week Optional_year
+
+ScheduleExample se = new ScheduleExample();
+String sch = '0 40 8 30 11 ?';
+System.schedule('One Time Pro', sch, se);
+
+

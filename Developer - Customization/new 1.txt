@@ -1,0 +1,43 @@
+public class PracClass {
+
+    public integer getContactsCount(list<Account> accList){
+        set<id> accIds = new set<id>();
+        for(Account ac: accList){
+            accIds.add(ac.id);
+        }
+        
+        list<Contact> cntList = new list<contact>();
+        cntList = [SELECT Id FROM Contact WHERE accountId in : accIds];
+        return cntList.size();
+    } 
+}
+
+/*PracClass cl = new PracClass();
+list<account> accList = new list<account>();
+accList = [SELECT id FROM Account WHERE id in('0015j000018Vad3AAC','0015j000018Vad4AAC')];
+integer count = cl.getContactsCount(accList);
+system.debug(count);
+*/
+
+
+public class OppClass {
+    
+    public list<opportunity> getOppList(set<id> oppIds){
+        
+        list<Opportunity> oppList = new list<Opportunity>();
+        oppList = [SELECT Id, Name FROM Opportunity WHERE id in : oppIds];
+        
+          return oppList;
+    }
+
+}
+
+/*
+OppClass cl = new OppClass();
+set<id> oppIds = new set<id>();
+oppIds.add('0065j00001I2V8lAAF');
+oppIds.add('0065j00001I2UFMAA3');
+list<Opportunity> oppList = new list<Opportunity>();
+oppList = cl.getOppList(oppIds);
+system.debug(oppList);
+*/

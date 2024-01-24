@@ -1,0 +1,6 @@
+08/12/2023
+
+with sharing:- Use the with sharing keyword when declaring a class to enforce sharing rules of the current user.
+
+without sharing:- Use the without sharing keyword when declaring a class to ensure that the sharing rules for the current user
+                  are not enforced.

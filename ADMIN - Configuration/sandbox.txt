@@ -1,0 +1,21 @@
+Sandboxes
+
+Salesforce has four types of sandboxes:-
+
+1.Developer :-
+A sandbox for a single developer to code and test changes in isolation. It includes a copy of the production organization's metadata, but no data. 
+Developer sandboxes are refreshed daily.
+
+2.Partial Copy :-
+A sandbox that includes a replica of the production organization's configuration and a sample of its data. It can be used for QA tasks like user 
+acceptance testing, integration testing, and training.
+
+3.Full :-
+A sandbox that's an exact replica of the production organization, including all data. It's intended for testing and provides the same data storage 
+as the production organization.
+
+4.Developer Pro :-
+A type of developer sandbox with more storage capacity.
+Salesforce sandboxes are isolated areas for making changes without affecting the live Salesforce system. They contain all the configuration, 
+customization, apps, and code (metadata) that have been made to the production environment. Some sandbox types can also contain some or all 
+of the production data. 

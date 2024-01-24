@@ -1,0 +1,111 @@
+14/09/23
+
+1.
+string num = '';
+for(integer i =0; i <=100; i++){
+   if(i == 0){
+   num = string.valueOf(i);
+   }
+   else{
+        num = num+', '+string.valueOf(i);
+		}
+	}
+system.debug(num);
+
+2. For odd and even number
+string even='';
+string odd='';
+for(integer i=1; i<=100; i++){
+    odd = odd+', '+i;
+    i= i+1;
+    even = even+', '+i;
+}
+system.debug('odd->'+odd);
+system.debug('even->'+even);
+
+
+3. For Loop
+
+list<string> nameList = new list<string>();
+nameList.add('A1');//0
+nameList.add('A50');
+nameList.add('A100');
+nameList.add('A150');
+nameList.add('A200');
+nameList.add('A260');//5 size-1
+
+for(integer i=0; i<=nameList.size()-1; i++){
+    system.debug(nameList.get(i));
+}
+
+4. For each loop 
+
+list<string> nameList = new list<string>();
+nameList.add('A1');//0
+nameList.add('A50');
+nameList.add('A100');
+nameList.add('A150');
+nameList.add('A200');
+nameList.add('A260');//5 size-1
+
+for(string nm: nameList){
+    system.debug(nm);
+}
+
+
+5. To get list of all contact with firstName and LastName using for each loop
+list<contact> conList = new list<contact>();
+conList =[SELECT id, FirstName, LastName FROM Contact ];
+
+for(contact con: conList){
+    system.debug(con);
+}
+
+
+SELECT id, firstName, lastName FROM Contact WHERE lastName in ('Bond','Rogers','Barr')
+
+15/09/23
+
+1.Task
+list<contact> conList = new list<contact>();
+for(integer i = 1; i<=100; i++){
+    contact con1 = new contact();
+    con1.lastName = 'A1'; 
+    conList.add(con1);
+}
+insert conList;
+
+Delete all contact
+list<contact> delList = new list<contact>();
+delList = [SELECT id, lastName FROM Contact WHERE lastName like 'A1'];
+delete delList;
+
+
+
+SELECT id, FirstName FROM Contact WHERE firstName != null
+
+list<contact> conList = new list<contact>();
+conList = [SELECT id, FirstName FROM Contact WHERE firstName != null];
+
+for(contact con:conList){
+    con.firstName = 'Mr. '+con.firstName;
+}
+
+update conList;
+
+
+
+
+list<contact> cList = new list<contact>();
+cList = [SELECT id, name, email, firstName, lastName FROM Contact WHERE email = null];
+for(contact c:cList){
+    string emailId;
+    if(c.firstName != null){
+        emailId = c.firstName+'.'+c.lastName+'@gmail.com';
+    }else{
+emailId = c.lastName+'@gmail.com';
+    }
+    
+    c.email = emailId.replace(' ','');
+}
+update cList;

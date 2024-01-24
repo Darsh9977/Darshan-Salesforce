@@ -1,0 +1,128 @@
+Traditional For Loop - to simply intirate
+
+for(expression1;expression2;expression3){}
+for(initi and declaration statement;expression2;expression3){}
+for(initi and declaration statement;exit condition;expression3)
+for(initi and declaration;exitcondition;incremental statement){logic to perform}
+ 
+0  10
+
+0 1 2 3 4 5 6
+
+i++; i=0+1
+
+i--; i=2-1
+
+i+2; - incremental statement increment by 2
+
+Increment Condition
+ 
+1 to 100
+
+for(integer i=1; i<=100; i++ ){
+    system.debug(i); }
+	
+Decrement Condition
+	
+for(integer i=10; i > 1; i--){
+    system.debug(i);
+}	
+
+List of Account with name From Account
+List<Account> accList = [SELECT Id, Name FROM Account];
+system.debug(accList.size());
+// System.debug(accList);
+for(integer i= 0; i < accList.size() ; i++){
+    system.debug(accList[i]);
+}
+
+
+ For Each Loop
+ 
+ for(Declaration Variable/Iterator: Collection Variable){
+ Logic to Perform
+}
+
+List<Account> accList = [SELECT Id, Name FROM Account];
+system.debug(accList.size());
+for(Account acc : accList){
+    system.debug(acc);
+}
+
+
+13/09/23
+
+For Loop
+
+List<Account> accList = [SELECT Id, Name FROM Account];
+for(integer i= 0; i < accList.size() ; i++){
+    system.debug(accList[i].Name);
+}
+
+
+List<Account> accList = [SELECT Id, Name FROM Account];
+list<string> nameList = new List<string>();
+for(integer i= 0; i < accList.size() ; i++){
+    nameList.add(accList[i].Name);
+}
+system.debug(nameList);
+
+For Each Loop
+
+
+List<Account> accList = [SELECT Id, Name FROM Account];
+list<string> nameList = new List<string>();
+for(Account acc: accList){
+    nameList.add(acc.name);
+}
+system.debug(nameList);
+
+
+list<string> nameList = new list<string>();
+nameList.add('A1');
+nameList.add('A2');
+nameList.add('A3');
+nameList.add('A4');
+nameList.add('A5');
+
+for(string n: nameList){
+system.debug(n);
+}
+
+Conditional Statement 
+1.if
+2.if-else
+3.if-elseif-else
+
+Syntax
+1.if(condition){
+
+}
+
+ = - stores the value
+ == - checks/ compares the value
+ 
+ string name;
+name = 'Darshan';
+
+if(name == 'Darshan'){
+    system.debug('Yes');
+}
+
+2. if(condition){
+}
+else{
+}
+string name;
+name = 'Darshan';
+
+if(name == 'Pranay'){
+    system.debug('Yes-Pranay');
+}
+else{
+    system.debug('Yes-Darshan');
+}
+
+
+Fibonacci Series
+0 1 1 2 3 5 8 13 21 34

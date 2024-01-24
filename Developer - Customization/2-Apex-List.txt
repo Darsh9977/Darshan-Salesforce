@@ -1,0 +1,102 @@
+                                                2-> Apex 
+
+string studentName; # declaration #
+studentName = 'Saurabh';  # initialization #
+system.debug(studentName);
+
+integer val = 200;
+decimal num = 10.234;
+boolean isPass = false;
+date dt = system.today();
+datetime = system.now();
+
+
+1.Typecasting - Conversation of Data type
+string numVal = '100';
+system.debug(numVal);
+integer intVal = integer.valueOf(numVal);
+system.debug(intVal);
+
+integer val = 200;
+string strVal = string.valueOf(val);
+system.debug(strVal);
+
+boolean accept only true or false
+
+string result = 'true';
+boolean isPass = boolean.valueOf(result);
+system.debug(isPass);
+
+string val = '100';
+integer intVal = integer.valueOf(val);
+system.debug(intVal);
+
+List- A list is an ordered Collection of Elements that contains Duplicate value. Each Elements of list has an index for indentification. 
+Index position of first element is always 0
+Normal bracket
+ 
+list<string> nameList = new list<string>();
+nameList.add('A1'); //0th index
+nameList.add('A2'); //1
+nameList.add('A3'); //2
+nameList.add('A4'); //3
+nameList.add('A5'); //4
+nameList.add('A6'); //5
+
+system.debug(nameList);
+system.debug(nameList.get(4));
+
+                           List
+					
+list<string> nameList = new list<string>();
+nameList.add('A1'); //0
+nameList.add('A2'); //1
+nameList.add('A3'); //2
+nameList.add('A4'); //3
+nameList.add('A1000'); //4
+
+system.debug(nameList);   --> (A1,A2,A3,A4,A1000)
+system.debug(nameList.size()); --> 5
+system.debug(nameList.get(2)); -->A3
+system.debug(nameList.get(4)); -->A1000
+
+list<integer> numList = new list<integer>();
+numList.add(0);//0
+numList.add(1);//1
+numList.add(1);//2
+numList.add(2);//3
+numList.add(3);//4
+numList.add(4);//5
+
+system.debug(numList);
+sytem.debug(numList.size();
+system.debug(numList.get(2));
+
+
+list<string> nameList = new list<string>();
+nameList.add('Darsh');//0 
+nameList.add('Nick');//1
+nameList.add('minu');//2 
+namelist.add('sanju');//3
+nameList.add('Vaishu');//4
+
+system.debug(nameList);
+system.debug(nameList.size());
+system.debug(nameList.get(4));
+
+
+Revision class
+
+09/10/2023
+
+list<integer> numList = new list<integer>();
+numList.add(100); 
+numList.add(100); 
+numList.add(300); 
+numList.add(400); 
+system.debug('-->' +numList.size());
+system.debug('-->' +numList.get(3));
+/* To add in same list */
+numList.add(2,150);
+numList.add(4,350);
+system.debug('-->' +numList);

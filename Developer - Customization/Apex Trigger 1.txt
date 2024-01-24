@@ -1,0 +1,45 @@
+Apex Trigger:- Apex triggers help us to execute the custom actions either before the event to the records in Salesforce 
+or after the occurrence of events to the records.
+
+DML(Data Manipulation Language) operation - 
+insert 
+update 
+delete 
+undelete
+
+system validation
+before insert - validation rule - restrict to enter Name as 'Test'
+after save - workflow rule - for ex:- send an email
+
+Syntax:-
+trigger trigger_name on Object_Name ( trigger_events){
+//block of code
+}
+ 
+Trigger events:-
+before insert
+after insert
+before update
+after update
+before delete
+after delete
+after undelete
+ 
+trigger AccountTrigger on Account (before insert){
+system.debug('Trigger before insert event');
+ }
+ 
+ Account acc = new Account();
+ acc.lastName = 'Test Trigger';
+ insert acc;
+ 
+ 
+trigger contactTrigger on Contact (before insert, after insert,before update, after update, before delete, after delete , after undelete ) {
+
+    system.debug('trigger.isBefore--->'+trigger.isBefore);
+    system.debug('trigger.isAfter--->'+trigger.isAfter);
+    system.debug('trigger.isInsert--->'+trigger.isInsert);
+    system.debug('trigger.isUpdate--->'+trigger.isUpdate);
+    system.debug('trigger.isDelete--->'+trigger.isDelete);
+    system.debug('trigger.isUndelete--->'+trigger.isUndelete);
+	

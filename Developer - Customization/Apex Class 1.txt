@@ -1,0 +1,36 @@
+Apex Class:- An Apex class is a template or blueprint from which Apex objects are created. 
+Classes consist of other classes, user-defined methods, variables, exception types, and static initialization code.
+
+                                                    09/10/2023
+1.MyFirstClass
+
+public class MyFirstClass {
+
+    public MyFirstClass(){
+        system.debug('---I am in MyFirstClass---');
+    }
+    
+    public void add(){
+        system.debug('--add--');
+    }
+}
+/* 
+MyFirstClass cl = new MyFirstClass();
+cl.add();
+*/ 
+
+2. MySecondClass
+
+public class MySecondApex {
+    public MySecondApex(){
+        system.debug('I am in Constructor');
+    }
+    public void Method(){
+        system.debug('I am in Method');
+    }
+}
+
+/*
+MySecondApex cl = new MysecondApex();
+cl.method();
+*/

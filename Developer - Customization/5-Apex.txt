@@ -1,0 +1,53 @@
+                                      5 - Apex
+Data Manipulation Language (DML) is a set of operations that can be used to make changes to a database.
+1.insert
+
+Account acc = new Account();
+acc.Name = 'Cloud Intellect';
+insert acc;
+
+2.update
+
+Account acc = new Account();
+acc.id = '0015j00001BYh4UAAT';
+acc.Name = 'CI10offline';
+update acc;
+
+3.delete
+
+Account acc = new Account();
+acc.id = '0015j00001BYh4UAAT';
+delete acc;
+
+4.undelete
+
+Account acc = new Account();
+acc.id = '0015j00001BYh4UAAT';
+undelete acc;
+
+1 more example of insert 
+contact c = new contact();
+c.AccountId = ac.id;
+c.lastName = 'Raj';
+insert c;
+
+
+list<contact> conList = new list<contact>();
+conList = [SELECT id, firstName, lastName, Email FROM Contact WHERE firstName = 'Pat'];
+
+contact con = new contact();
+con.id = conList.get(0).id;
+con.firstName = 'Laura';
+update con;
+
+list <Account> accList = new list<Account>();
+accList = [SELECT id, Name FROM Account];
+system.debug('--->'+accList);
+system.debug('#####'+accList.get(0));
+system.debug('@@@@'+accList.get(0).Name);
+
+Account acc = new Account();
+ac.id = accList.get(0).id;
+ac.Name = 'xyz';
+update ac;
+

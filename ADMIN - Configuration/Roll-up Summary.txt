@@ -1,0 +1,5 @@
+21/09/2023
+
+Roll up Summary Field -> Master Detail Relationship -> Tightly Coupled(Parent is Mandatory)
+
+Roll up summary can only be created on Parent.

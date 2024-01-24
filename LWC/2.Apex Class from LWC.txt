@@ -1,0 +1,29 @@
+03/01/2023
+Calling an Apex Class from LWC
+1.Calling an Apex Method Imperatively in LWC
+
+@AuraEnabled annotation
+import addContact from ‘@salesforce/apex/ContactController.addContact’;
+           |
+       methodname
+	   
+	   handleAddContact() {}
+	       |
+	   function
+	   
+2.Calling an Apex Method Using Wire Services in LWC	   
+The wire service in LWC provides a streamlined way to retrieve data or perform an action without requiring Apex code.
+
+@AuraEnabled  cacheable=true 
+
+@wire decorator
+
+same data as it is Wired as Property
+
+Manipulation of data -> Wired as Function
+
+onchange(event){
+this.accName = event.target.value;
+}
+
+@wire(getContacts,{name:$accName}) contacts;

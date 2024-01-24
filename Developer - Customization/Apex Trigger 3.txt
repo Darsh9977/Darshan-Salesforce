@@ -1,0 +1,38 @@
+												  06/11/2023
+												  
+trigger contactTrigger on Contact (before insert, after insert,before update, after update, before delete, after delete , after undelete ) {
+
+if(trigger.isBefore){
+	if(trigger.isInsert){
+		system.debug('Before Insert New Value-->'+trigger.new);
+		system.debug('Before Insert Old Value-->'+trigger.old);
+	}
+	if(trigger.isUpdate){
+		system.debug('Before Update New Value-->'+trigger.new);
+		system.debug('Before Update Old Value-->'+trigger.old);
+	}
+	if(trigger.isDelete){
+		system.debug('Before Delete New Value-->'+trigger.new);
+		system.debug('Before Delete Old Value-->'+trigger.new);
+	}
+}
+if(trigger.isAfter){
+	if(trigger.isInsert){
+		system.debug('After Insert New Value-->'+trigger.new);
+		system.debug('After Insert Old Value-->'+trigger.old);
+	}
+	if(trigger.isUpdate){
+		system.debug('After Update New Value-->'+trigger.new);
+		system.debug('After Update Old Value-->'+trigger.old);
+	}
+	if(trigger.isDelete){
+		system.debug('After Delete New Value-->'+trigger.new);
+		system.debug('After Delete Old Value-->'+trigger.old);
+	}
+	if(trigger.isUndelete){
+		system.debug('After Undelete New Value-->'+trigger.new);
+		system.debug('After Undelete Old Value-->'+trigger.old);
+	}
+
+}
+}

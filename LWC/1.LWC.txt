@@ -1,0 +1,125 @@
+11/12/2023
+
+CLI - Command Line Interface
+
+commands start with sfdx 
+
+Control+shift+p --> Command Palettee 
+
+1.Explorer --> Current project.
+
+2.Search --> Search into file in any folder.
+
+3.Extensions --> Add Extensions.
+
+Component naming always camel case
+
+12/12/2023
+
+xml
+
+Retrieve this source to org --> org to local vs code
+
+Deploy this source to org --> local vs code to org
+
+13/12/2023
+
+vf - aura - lwc
+
+html - User Interface(UI)
+
+js - Behaviour
+
+test.jest
+html
+js
+xml-> It is configrable file where we have to expose properties and whole component and lwc
+
+
+15/12/2023
+
+Screen Flow - maximum upto 50 version at one time only one activate
+
+<isExposed>true</isExposed>
+<target>lightning__FlowScreen</target>
+
+Logic
+
+1. Assignment - like a = b
+2. Decision Element - if, else, if else if
+3. loop - for each loop
+4. transform(beta) - convert data type
+5. collection sort - list ascending or desc
+6. collection filter - filters
+
+line - Connector
+
+18/12/2023
+JavaScript - JavaScript is a Scipting Language(executes top to bottom) which executes in Browser.
+
+import - library
+ 
+ Lightning Element - Parent
+ FirstComponent - Child
+ 
+Variables
+ let
+ var
+ const
+ 
+var d; -> declare not initialize
+ 
+scope of var functional scope variable - It can be declared.
+scope of let block scope variable - It cannot be declared. - It can be reassigned. 
+scope of const block scope variable - It cannot be declared. - It cannot be reassigned.
+
+
+20/12/2023
+
+
+undefined boolean value is false 
+
+21/12/2023
+
+hasownproperty
+
+
+22/12/2023
+
+HTML
+Salesforce Tags
+SLDS
+<div>   </div> --> <lightning-layout> 
+
+
+                     <lightning-layout>  
+                     <lightning-layout-item size="6">   					 --> Screen size - 12
+					 </lightning-layout>
+
+
+23/12/2023
+ 
+browser event
+onblur: AURA.ACTION The action triggered when the element releases focus.
+onclick: AURA.ACTION The action triggered when the button is clicked.
+onfocus: AURA.ACTION The action triggered when the element receives focus.
+onchange: AURA.ACTION The action triggered when a value attribute changes.
+
+
+
+2 input - username 
+          password
+		  
+2 button - login
+           signout
+
+
+26/12/2023
+
+Track is a private reactive property.
+@api - public reactive property.
+value bind - {}
+use captial t then - kabab case		   
+
+abcDEFghi
+<c-abc-d-e-fghi>
